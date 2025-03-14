@@ -1,0 +1,75 @@
+unit view.todolist;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  TViewTodoList = class(TForm)
+    ListBoxTasks: TListBox;
+    pnlHeader: TPanel;
+    pnlFunctions: TPanel;
+    ButtonRemove: TButton;
+    EditTask: TEdit;
+    ButtonAdd: TButton;
+    pnlFooter: TPanel;
+    lblTitle: TLabel;
+    detailLine: TShape;
+    btnClose: TSpeedButton;
+    procedure ButtonAddClick(Sender: TObject);
+    procedure ButtonRemoveClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+  private
+    var
+     DarkModeEnabled: Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  ViewTodoList: TViewTodoList;
+
+implementation
+
+{$R *.dfm}
+
+procedure TViewTodoList.btnCloseClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TViewTodoList.ButtonAddClick(Sender: TObject);
+begin
+  // Verificar se o campo de texto não está vazio
+  if Trim(EditTask.Text) <> '' then
+  begin
+    // Adicionar a tarefa à ListBox
+    ListBoxTasks.Items.Add(EditTask.Text);
+    // Limpar o campo de entrada
+    EditTask.Clear;
+  end
+  else
+  begin
+    // Mostrar um aviso caso o campo esteja vazio
+    ShowMessage('Por favor, insira uma tarefa!');
+  end;
+end;
+
+procedure TViewTodoList.ButtonRemoveClick(Sender: TObject);
+begin
+    // Verificar se uma tarefa está selecionada
+  if ListBoxTasks.ItemIndex >= 0 then
+  begin
+    // Remover a tarefa selecionada
+    ListBoxTasks.Items.Delete(ListBoxTasks.ItemIndex);
+  end
+  else
+  begin
+    // Mostrar um aviso caso nenhuma tarefa esteja selecionada
+    ShowMessage('Selecione uma tarefa para remover');
+  end;
+end;
+
+end.

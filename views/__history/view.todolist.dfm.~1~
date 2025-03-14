@@ -1,0 +1,144 @@
+object ViewTodoList: TViewTodoList
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 435
+  ClientWidth = 392
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesktopCenter
+  TextHeight = 15
+  object ListBoxTasks: TListBox
+    Left = 0
+    Top = 97
+    Width = 392
+    Height = 305
+    Cursor = crHandPoint
+    Align = alClient
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BorderStyle = bsNone
+    Color = clBtnFace
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = cl3DDkShadow
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ItemHeight = 15
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 405
+  end
+  object pnlHeader: TPanel
+    Left = 0
+    Top = 0
+    Width = 392
+    Height = 33
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 16737971
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitWidth = 413
+    object lblTitle: TLabel
+      Left = 14
+      Top = 9
+      Width = 127
+      Height = 16
+      Caption = 'Todo Application <3'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'System'
+      Font.Style = []
+      ParentFont = False
+    end
+    object btnClose: TSpeedButton
+      Left = 369
+      Top = 0
+      Width = 23
+      Height = 33
+      Cursor = crHandPoint
+      Align = alRight
+      Caption = '*'
+      Flat = True
+      OnClick = btnCloseClick
+      ExplicitLeft = 360
+      ExplicitHeight = 22
+    end
+  end
+  object pnlFunctions: TPanel
+    Left = 0
+    Top = 33
+    Width = 392
+    Height = 64
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 16737971
+    ParentBackground = False
+    TabOrder = 2
+    ExplicitTop = 25
+    ExplicitWidth = 397
+    object detailLine: TShape
+      Left = 14
+      Top = 41
+      Width = 195
+      Height = 1
+      ParentShowHint = False
+      Pen.Color = clWhite
+      ShowHint = False
+    end
+    object ButtonRemove: TButton
+      Left = 295
+      Top = 21
+      Width = 58
+      Height = 25
+      Caption = 'Button2'
+      TabOrder = 0
+      OnClick = ButtonRemoveClick
+    end
+    object EditTask: TEdit
+      Left = 14
+      Top = 21
+      Width = 177
+      Height = 20
+      BevelInner = bvNone
+      BorderStyle = bsNone
+      Color = 16737971
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = 'System'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      Text = 'Digite sua tarefa...'
+    end
+    object ButtonAdd: TButton
+      Left = 232
+      Top = 20
+      Width = 57
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 2
+      OnClick = ButtonAddClick
+    end
+  end
+  object pnlFooter: TPanel
+    Left = 0
+    Top = 402
+    Width = 392
+    Height = 33
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 16737971
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitTop = 440
+    ExplicitWidth = 413
+  end
+end
